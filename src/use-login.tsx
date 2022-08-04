@@ -6,15 +6,15 @@ import type { LoginBody } from './api/customers/login'
 import useCustomer from './use-customer'
 
 const defaultOpts = {
-  url: '/api/bigcommerce/customers/login',
+  url: '/api/login',
   method: 'POST',
 }
 
 export type LoginInput = LoginBody
 
 export const fetcher: HookFetcher<null, LoginBody> = (
-  options,
   { email, password },
+  options,
   fetch
 ) => {
   if (!(email && password)) {

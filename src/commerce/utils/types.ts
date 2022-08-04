@@ -7,8 +7,8 @@ export type FetcherOptions = Omit<HookFetcherOptions, "base"> & {
 }
 
 export type HookFetcher<Result, Input = null> = (
+    input: Input,
   options: HookFetcherOptions | null,
-  input: Input,
   fetch: <T = Result>(options: FetcherOptions) => Promise<T>
 ) => Result | Promise<Result>
 
