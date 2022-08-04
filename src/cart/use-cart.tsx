@@ -15,8 +15,9 @@ export type UseCartInput = {
 }
 
 export const fetcher: HookFetcher<Cart | null, CartInput> = (
+    { cartId, include },
   options,
-  { cartId, include },
+
   fetch
 ) => {
   if (!cartId) return null

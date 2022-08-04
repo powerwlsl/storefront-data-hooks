@@ -15,14 +15,15 @@ const defaultOpts = {
 export type UpdateItemInput = Partial<{ id: string } & ItemBody>
 
 export const fetcher: HookFetcher<Cart | null, UpdateItemBody> = (
+    { itemId, item, include },
   options,
-  { itemId, item, include },
+
   fetch
 ) => {
   if (Number.isInteger(item.quantity)) {
     // Also allow the update hook to remove an item if the quantity is lower than 1
     if (item.quantity! < 1) {
-      return removeFetcher(null, { itemId }, fetch)
+      return removeFetcher( { itemId },null, fetch)
     }
   } else if (item.quantity) {
     throw new CommerceError({

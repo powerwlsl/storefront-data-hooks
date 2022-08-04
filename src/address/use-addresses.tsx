@@ -20,8 +20,9 @@ export type UseAddressesPayload = UseAddressesInput & {
 }
 
 export const fetcher: HookFetcher<AddressesResponse | null, UseAddressesPayload> = async (
-	options,
 	{ customerId, page },
+	options,
+
 	fetch
 ) => {
 	if (!customerId) return null

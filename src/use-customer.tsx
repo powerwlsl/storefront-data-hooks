@@ -11,8 +11,9 @@ const defaultOpts = {
 export type { Customer }
 
 export const fetcher: HookFetcher<Customer | null> = async (
+    _,
   options,
-  _,
+
   fetch
 ) => {
   // Use a dummy base as we only care about the relative path

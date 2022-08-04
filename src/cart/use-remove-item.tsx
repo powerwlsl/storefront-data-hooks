@@ -14,8 +14,9 @@ export type RemoveItemInput = {
 }
 
 export const fetcher: HookFetcher<Cart | null, RemoveItemBody> = (
+    { itemId, include },
   options,
-  { itemId, include },
+
   fetch
 ) => {
   // Use a dummy base as we only care about the relative path

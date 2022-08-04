@@ -26,13 +26,14 @@ const useData: UseData = (options, input, fetcherFn, swrOptions) => {
   ) => {
     try {
       return await fetcherFn(
-        { url, query, method, base, credentials },
         // Transform the input array into an object
         args.reduce((obj, val, i) => {
           obj[input[i][0]!] = val
           return obj
         }, {}),
-        fetcherRef.current
+          { url, query, method, base, credentials },
+
+          fetcherRef.current
       )
     } catch (error) {
       // SWR will not log errors, but any error that's not an instance

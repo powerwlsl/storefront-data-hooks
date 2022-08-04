@@ -9,7 +9,7 @@ export default function useAction<T, Input = null>(
   const { fetcherRef, credentials, base } = useCommerce()
 
   return useCallback(
-    (input: Input) => fetcher({...options, credentials, base }, input, fetcherRef.current),
+    (input: Input) => fetcher(input,{...options, credentials, base },  fetcherRef.current),
     [fetcher]
   )
 }

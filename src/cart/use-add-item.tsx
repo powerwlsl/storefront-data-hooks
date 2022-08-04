@@ -14,8 +14,9 @@ const defaultOpts = {
 export type AddItemInput = ItemBody
 
 export const fetcher: HookFetcher<Cart, AddItemBody> = (
+    { item, locale, include },
   options,
-  { item, locale, include },
+
   fetch
 ) => {
   if (

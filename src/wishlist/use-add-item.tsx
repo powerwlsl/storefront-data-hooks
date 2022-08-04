@@ -14,8 +14,8 @@ const defaultOpts = {
 export type AddItemInput = ItemBody
 
 export const fetcher: HookFetcher<Wishlist, AddItemBody> = (
-  options,
   { item },
+  options,
   fetch
 ) => {
   // TODO: add validations before doing the fetch

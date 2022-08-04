@@ -16,8 +16,8 @@ export type RemoveItemInput = {
 }
 
 export const fetcher: HookFetcher<Wishlist | null, RemoveItemBody> = (
-  options,
   { itemId },
+  options,
   fetch
 ) => {
   // Use a dummy base as we only care about the relative path

@@ -13,8 +13,9 @@ const defaultOpts = {
 export type AddAddressInput = Omit<AddAddressBody, "customer_id">
 
 export const fetcher: HookFetcher<null, AddAddressInput> = (
-	options,
 	input,
+	options,
+
 	fetch
 ) => {
 	if (

@@ -8,7 +8,7 @@ const defaultOpts = {
   method: 'POST',
 }
 
-export const fetcher: HookFetcher<null> = (options, _, fetch) => {
+export const fetcher: HookFetcher<null> = ( _,options, fetch) => {
   // Use a dummy base as we only care about the relative path
   const url = new URL(options?.url ?? defaultOpts.url, 'http://a')
 

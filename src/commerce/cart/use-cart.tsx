@@ -21,9 +21,9 @@ export default function useCart<Result>(
 ) {
   const { cartCookie } = useCommerce()
 
-  const fetcher: typeof fetcherFn = (options, input, fetch) => {
+  const fetcher: typeof fetcherFn = ( input, options,fetch) => {
     input.cartId = Cookies.get(cartCookie)
-    return fetcherFn(options, input, fetch)
+    return fetcherFn( input, options, fetch)
   }
 
   const response = useData(options, input, fetcher, swrOptions)

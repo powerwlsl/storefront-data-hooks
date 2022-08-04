@@ -13,8 +13,9 @@ const defaultOpts = {
 export type SignupInput = SignupBody
 
 export const fetcher: HookFetcher<null, SignupBody> = (
+    { firstName, lastName, email, password, ...rest },
   options,
-  { firstName, lastName, email, password, ...rest },
+
   fetch
 ) => {
   if (!(firstName && lastName && email && password)) {

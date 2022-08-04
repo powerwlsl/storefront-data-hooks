@@ -20,8 +20,9 @@ export interface UseWishlistInput extends UseWishlistOptions {
 }
 
 export const fetcher: HookFetcher<Wishlist | null, UseWishlistInput> = (
+    { customerId, includeProducts },
   options,
-  { customerId, includeProducts },
+
   fetch
 ) => {
   if (!customerId) return null

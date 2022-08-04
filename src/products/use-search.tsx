@@ -21,8 +21,9 @@ export type SearchProductsPayload = Omit<SearchProductsInput, "categoryIds"> & {
 }
 
 export const fetcher: HookFetcher<SearchProductsData, SearchProductsPayload> = (
+    { search, categoryId, stringifiedCategoryIds, brandId, sort, page },
   options,
-  { search, categoryId, stringifiedCategoryIds, brandId, sort, page },
+
   fetch
 ) => {
   // Use a dummy base as we only care about the relative path

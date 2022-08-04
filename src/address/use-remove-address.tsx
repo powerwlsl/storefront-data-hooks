@@ -12,7 +12,7 @@ const defaultOpts = {
 
 export type RemoveAddressInput = RemoveAddressBody
 
-export const fetcher: HookFetcher<null, RemoveAddressBody> = (options, { id }, fetch) => {
+export const fetcher: HookFetcher<null, RemoveAddressBody> = ( { id }, options,fetch) => {
 	if (!id) {
 		throw new CommerceError({
 			message: "An id is required to remove an address",

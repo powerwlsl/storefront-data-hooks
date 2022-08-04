@@ -17,8 +17,9 @@ export interface UseOrdersInput {
 }
 
 export const fetcher: HookFetcher<Orders | null, UseOrdersInput> = async (
+    { customerId },
   options,
-  { customerId },
+
   fetch
 ) => {
   if (!customerId) return null

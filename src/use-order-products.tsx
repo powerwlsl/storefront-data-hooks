@@ -18,7 +18,7 @@ export interface UseOrderProductsInput {
 export const fetcher: HookFetcher<
 	Products | null,
 	UseOrderProductsInput
-> = async (options, { orderId }, fetch) => {
+> = async ({ orderId },options,  fetch) => {
 	if (!orderId) return null
 
 	// Use a dummy base as we only care about the relative path
